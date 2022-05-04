@@ -84,9 +84,19 @@ void getSimWord(node *root,string currWord,vector<string> &result){
 }
 int main(){
     
-    vector<string> words = {"hope","rope","dope","eat","ate","rat"
-        ,"pat","sat","mat","cat","cut","tat","sad","mate","fat"
-    };
+    	fstream file;
+	file.open("input.txt",ios::in);
+	
+	if(!file){
+		cout<<"File not opened properly.\n";
+		exit(0);
+	}
+	vector<string> words;
+	while(!file.eof()){
+		string x;
+		file>>x;
+		words.push_back(x);
+	}
     
     int n = words.size();
     
@@ -99,7 +109,7 @@ int main(){
     vector<string> result;
     getSimWord(root,"kate",result);
     
-    cout<<"All words similar to \"kate\":";
-    for(int i=0;i<result.size();i++) cout<<result[i]<<" ";
+    cout<<"\nAll words similar to \"kate\":\n";
+    for(int i=0;i<result.size();i++) cout<<result[i]<<"\n";
     return 0;
 }
