@@ -73,9 +73,20 @@ void search(node *root,string word,int i,bool *isPresent){
 int main()
 {
     node *root = 0;
-    vector<string> words = {"Azure","baby","cabs","cars","cafe","Cavil","Edify","Mien",
-    "Angst","Adagio","Agita","Agog","Aloof","Blob","Bozo","Bond","Bed","Bat","Eat","East","Eager","Eagle"};
-    
+    fstream file;
+	file.open("input.txt",ios::in);
+	
+	if(!file){
+		cout<<"File not opened properly.\n";
+		exit(0);
+	}
+	vector<string> words;
+	while(!file.eof()){
+		string x;
+		file>>x;
+		words.push_back(x);
+	}
+	
     int n = words.size();
     
     srand(time(0));
