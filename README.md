@@ -1,4 +1,4 @@
-# Word-auto-completion-suggestion
+# Word-auto-completion-suggestion 
 
 Here we have implemented two different data structure for word suggestion and auto completion. The data structure that we have implemented here are ***Burkhad-Keller Tree*** and ***Ternary Search Tree***.
 
